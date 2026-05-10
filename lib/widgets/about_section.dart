@@ -9,7 +9,6 @@ import 'package:url_launcher/url_launcher.dart';
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
 
-  // CV Download method
   Future<void> downloadCV() async {
     final data = await rootBundle.load('assets/cv/resume.pdf');
     final bytes = data.buffer.asUint8List();
