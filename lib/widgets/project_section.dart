@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectSection extends StatelessWidget {
   const ProjectSection({super.key});
@@ -24,15 +25,6 @@ class ProjectSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-              Text(
-                "Projects",
-                style: GoogleFonts.poppins(
-                  fontSize: isMobile ? 26 : 40,
-
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
               const SizedBox(height: 25),
 
               /// PROJECT 1
@@ -42,6 +34,7 @@ class ProjectSection extends StatelessWidget {
                 image: "assets/images/portfolio.png",
                 title: "Portfolio App",
                 description: "My personal Flutter portfolio.",
+                githubUrl: "https://github.com/theridhishree/portfolio",
               ),
 
               const SizedBox(height: 25),
@@ -55,6 +48,7 @@ class ProjectSection extends StatelessWidget {
                 title: "Food Delivery App",
 
                 description: "A modern food delivery UI built with Flutter.",
+                githubUrl: "https://github.com/theridhishree?tab=repositories",
               ),
 
               const SizedBox(height: 25),
@@ -68,6 +62,7 @@ class ProjectSection extends StatelessWidget {
                 title: "E-commerce App",
 
                 description: "Shopping app UI in Flutter.",
+                githubUrl: "https://github.com/theridhishree?tab=repositories",
               ),
             ],
           ),
@@ -83,6 +78,7 @@ class ProjectCard extends StatelessWidget {
   final String title;
 
   final String description;
+  final String githubUrl;
 
   final bool isMobile;
 
@@ -94,9 +90,17 @@ class ProjectCard extends StatelessWidget {
     required this.title,
 
     required this.description,
+    required this.githubUrl,
 
     required this.isMobile,
   });
+
+  //Open github
+  Future<void> openGithub() async {
+    final Uri url = Uri.parse(githubUrl);
+
+    await launchUrl(url, mode: LaunchMode.externalApplication);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -182,7 +186,9 @@ class ProjectCard extends StatelessWidget {
 
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          openGithub();
+                        },
 
                         child: const Text("GitHub"),
                       ),

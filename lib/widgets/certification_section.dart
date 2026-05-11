@@ -54,26 +54,12 @@ class CertificationSection extends StatelessWidget {
       color: const Color.fromARGB(255, 208, 208, 208),
 
       child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 40,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
 
           children: [
-            /// HEADING
-            Text(
-              "Certifications",
-
-              style: GoogleFonts.poppins(
-                fontSize: isMobile ? 26 : 40,
-
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
             const SizedBox(height: 25),
 
             /// CARDS
@@ -107,10 +93,7 @@ class CertificationSection extends StatelessWidget {
   }
 
   /// CERTIFICATE CARD
-  Widget certificateCard(
-    BuildContext context,
-    Map<String, String> cert,
-  ) {
+  Widget certificateCard(BuildContext context, Map<String, String> cert) {
     return Container(
       padding: const EdgeInsets.all(20),
 
@@ -135,13 +118,7 @@ class CertificationSection extends StatelessWidget {
 
         children: [
           /// ICON
-          Icon(
-            Icons.workspace_premium,
-
-            size: 32,
-
-            color: Colors.orange,
-          ),
+          Icon(Icons.workspace_premium, size: 32, color: Colors.orange),
 
           const SizedBox(width: 15),
 
@@ -208,11 +185,7 @@ class CertificationSection extends StatelessWidget {
                 Text(
                   cert["date"]!,
 
-                  style: GoogleFonts.poppins(
-                    fontSize: 13,
-
-                    color: Colors.grey,
-                  ),
+                  style: GoogleFonts.poppins(fontSize: 13, color: Colors.grey),
                 ),
               ],
             ),

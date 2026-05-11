@@ -18,6 +18,9 @@ class SkillsSection extends StatelessWidget {
       {"icon": Icons.design_services, "title": "UI/UX"},
       {"icon": Icons.storage, "title": "MongoDB"},
       {"icon": Icons.code, "title": "C/C++"},
+      {"icon": Icons.code, "title": "Java"},
+      {"icon": Icons.web, "title": "HTML"},
+      {"icon": Icons.web, "title": "CSS"},
     ];
 
     return SingleChildScrollView(
@@ -32,14 +35,6 @@ class SkillsSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Skills",
-                style: GoogleFonts.poppins(
-                  fontSize: isMobile ? 26 : 40,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
               const SizedBox(height: 25),
               GridView.builder(
                 shrinkWrap: true,

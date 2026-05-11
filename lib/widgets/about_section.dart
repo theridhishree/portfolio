@@ -42,7 +42,7 @@ class AboutSection extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     radius: 70,
-                    backgroundImage: AssetImage("assets/images/profile.png"),
+                    backgroundImage: AssetImage("assets/images/mypic.jpeg"),
                   ),
                   const SizedBox(height: 30),
 

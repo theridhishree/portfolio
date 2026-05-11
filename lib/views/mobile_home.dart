@@ -15,6 +15,8 @@ class MobileHome extends StatefulWidget {
 class _MobileHomeState extends State<MobileHome> {
   int currentIndex = 0;
 
+  final List<String> titles = ["About", "Projects", "Skills", "Certifications"];
+
   final List<Widget> pages = [
     AboutSection(),
     ProjectSection(),
@@ -26,7 +28,7 @@ class _MobileHomeState extends State<MobileHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Portfolio"),
+        title: Text(titles[currentIndex]),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 208, 208, 208),
       ),
