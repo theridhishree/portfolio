@@ -30,9 +30,15 @@ class AboutSection extends StatelessWidget {
 
     if (await canLaunchUrl(phoneUri)) {
       await launchUrl(phoneUri);
-    } else {
-      throw 'Could not launch';
     }
+  }
+
+  /// LINKEDIN
+  Future<void> launchLinkedIn() async {
+    final Uri url = Uri.parse(
+      "https://www.linkedin.com/in/ridhi-shree-8a6589317/",
+    );
+    await launchUrl(url, mode: LaunchMode.externalApplication);
   }
 
   @override
@@ -43,7 +49,6 @@ class AboutSection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-
       color: const Color.fromARGB(255, 208, 208, 208),
 
       child: SingleChildScrollView(
@@ -51,12 +56,10 @@ class AboutSection extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
 
           child: isMobile
-              /// MOBILE UI
               ? Column(
                   children: [
                     const CircleAvatar(
                       radius: 70,
-
                       backgroundImage: AssetImage("assets/images/mypic.jpeg"),
                     ),
 
@@ -65,7 +68,6 @@ class AboutSection extends StatelessWidget {
                     aboutText(),
                   ],
                 )
-              /// DESKTOP UI
               : Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -76,7 +78,6 @@ class AboutSection extends StatelessWidget {
 
                     const CircleAvatar(
                       radius: 120,
-
                       backgroundImage: AssetImage("assets/images/profile.png"),
                     ),
                   ],
@@ -95,7 +96,6 @@ class AboutSection extends StatelessWidget {
         /// HELLO TEXT
         Text(
           "Hello, I'm ",
-
           style: GoogleFonts.poppins(fontSize: 22, color: Colors.black54),
         ),
 
@@ -104,7 +104,6 @@ class AboutSection extends StatelessWidget {
         /// NAME
         Text(
           "Ridhi Shree",
-
           style: GoogleFonts.poppins(
             fontSize: 48,
             fontWeight: FontWeight.bold,
@@ -117,7 +116,6 @@ class AboutSection extends StatelessWidget {
         /// ROLE
         Text(
           "Flutter Developer",
-
           style: GoogleFonts.poppins(
             fontSize: 28,
             color: Colors.blue,
@@ -130,7 +128,6 @@ class AboutSection extends StatelessWidget {
         /// DESCRIPTION
         Text(
           "BCA student passionate about creating responsive mobile applications and learning modern technologies.",
-
           style: GoogleFonts.poppins(
             fontSize: 18,
             height: 1.6,
@@ -187,17 +184,43 @@ class AboutSection extends StatelessWidget {
           ],
         ),
 
+        /// LINKEDIN BUTTON RESUME KE NICHE
+        const SizedBox(height: 20),
+
+        ElevatedButton.icon(
+          onPressed: () async {
+            await launchLinkedIn();
+          },
+
+          icon: const Icon(Icons.link),
+
+          label: const Text("LinkedIn"),
+
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
+
+            backgroundColor: Colors.blue,
+
+            foregroundColor: Colors.white,
+
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+        ),
+
         const SizedBox(height: 35),
 
         /// INFO CARDS
         Wrap(
           spacing: 15,
-
           runSpacing: 15,
 
           children: [
             infoCard("3+", "Projects"),
+
             infoCard("5+", "Certificates"),
+
             infoCard("10+", "Skills"),
           ],
         ),
@@ -220,9 +243,7 @@ class AboutSection extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.grey.shade300,
-
             blurRadius: 8,
-
             offset: const Offset(0, 4),
           ),
         ],
@@ -235,9 +256,7 @@ class AboutSection extends StatelessWidget {
 
             style: GoogleFonts.poppins(
               fontSize: 24,
-
               fontWeight: FontWeight.bold,
-
               color: Colors.blue,
             ),
           ),
@@ -249,7 +268,6 @@ class AboutSection extends StatelessWidget {
 
             style: GoogleFonts.poppins(
               fontSize: 16,
-
               fontWeight: FontWeight.w500,
             ),
           ),

@@ -13,7 +13,8 @@ class ProjectSection extends StatelessWidget {
 
     return Container(
       height: double.infinity,
-      color: Color.fromARGB(255, 208, 208, 208),
+      color: const Color.fromARGB(255, 208, 208, 208),
+
       child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -32,9 +33,15 @@ class ProjectSection extends StatelessWidget {
                 isMobile: isMobile,
 
                 image: "assets/images/portfolio.png",
+
                 title: "Portfolio App",
+
                 description: "My personal Flutter portfolio.",
+
                 githubUrl: "https://github.com/theridhishree/portfolio",
+
+                apkUrl:
+                    "https://github.com/theridhishree/portfolio/releases/download/v1/app-release.apk",
               ),
 
               const SizedBox(height: 25),
@@ -48,7 +55,11 @@ class ProjectSection extends StatelessWidget {
                 title: "Food Delivery App",
 
                 description: "A modern food delivery UI built with Flutter.",
-                githubUrl: "https://github.com/theridhishree?tab=repositories",
+
+                githubUrl: "https://github.com/theridhishree/fooddelivery",
+
+                apkUrl:
+                    "https://github.com/theridhishree/fooddelivery/releases/download/v1/app-release.apk",
               ),
 
               const SizedBox(height: 25),
@@ -62,7 +73,11 @@ class ProjectSection extends StatelessWidget {
                 title: "E-commerce App",
 
                 description: "Shopping app UI in Flutter.",
-                githubUrl: "https://github.com/theridhishree?tab=repositories",
+
+                githubUrl: "https://github.com/theridhishree/ecommerce",
+
+                apkUrl:
+                    "https://github.com/theridhishree/ecommerce/releases/download/v1/app-release.apk",
               ),
             ],
           ),
@@ -78,7 +93,10 @@ class ProjectCard extends StatelessWidget {
   final String title;
 
   final String description;
+
   final String githubUrl;
+
+  final String apkUrl;
 
   final bool isMobile;
 
@@ -90,14 +108,24 @@ class ProjectCard extends StatelessWidget {
     required this.title,
 
     required this.description,
+
     required this.githubUrl,
+
+    required this.apkUrl,
 
     required this.isMobile,
   });
 
-  //Open github
+  /// OPEN GITHUB
   Future<void> openGithub() async {
     final Uri url = Uri.parse(githubUrl);
+
+    await launchUrl(url, mode: LaunchMode.externalApplication);
+  }
+
+  /// DOWNLOAD APK
+  Future<void> downloadApk() async {
+    final Uri url = Uri.parse(apkUrl);
 
     await launchUrl(url, mode: LaunchMode.externalApplication);
   }
@@ -153,6 +181,7 @@ class ProjectCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
 
                 children: [
+                  /// TITLE
                   Text(
                     title,
 
@@ -165,6 +194,7 @@ class ProjectCard extends StatelessWidget {
 
                   const SizedBox(height: 8),
 
+                  /// DESCRIPTION
                   Text(
                     description,
 
@@ -179,24 +209,29 @@ class ProjectCard extends StatelessWidget {
 
                   const SizedBox(height: 15),
 
+                  /// BUTTONS
                   Wrap(
                     spacing: 10,
 
                     runSpacing: 10,
 
                     children: [
+                      /// GITHUB BUTTON
                       ElevatedButton(
-                        onPressed: () {
-                          openGithub();
+                        onPressed: () async {
+                          await openGithub();
                         },
 
                         child: const Text("GitHub"),
                       ),
 
+                      /// APK BUTTON
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await downloadApk();
+                        },
 
-                        child: const Text("apk"),
+                        child: const Text("APK"),
                       ),
                     ],
                   ),
