@@ -12,39 +12,63 @@ class CertificationSection extends StatelessWidget {
 
     final List<Map<String, String>> certificates = [
       {
-        "title": "Flutter Development",
-        "date": "2025-01-15",
-        "image": "assets/certificates/ss1.jpg",
+        "title": "Python Programming",
+        "date": "08-03-2024",
+        "image": "assets/certificates/python.png",
       },
 
       {
-        "title": "Dart Programming",
-        "date": "2024-12-10",
-        "image": "assets/certificates/ss1.jpg",
+        "title": "Drupal",
+        "date": "15-04-2025",
+        "image": "assets/certificates/drupal.png",
       },
 
       {
-        "title": "Firebase Essentials",
-        "date": "2024-11-05",
-        "image": "assets/certificates/ss1.jpg",
+        "title": "C Programming",
+        "date": "21-06-2025",
+        "image": "assets/certificates/c.png",
       },
 
       {
-        "title": "UI/UX Design",
-        "date": "2024-09-15",
-        "image": "assets/certificates/ss1.jpg",
+        "title": "C++ Programming",
+        "date": "21-06-2025",
+        "image": "assets/certificates/c++.png",
       },
 
       {
-        "title": "Firebase Advanced",
-        "date": "2024-08-10",
-        "image": "assets/certificates/ss1.jpg",
+        "title": "Java Internship",
+        "date": "25-07-2025",
+        "image": "assets/certificates/java.png",
       },
 
       {
-        "title": "Flutter Web",
-        "date": "2024-07-05",
-        "image": "assets/certificates/ss1.jpg",
+        "title": "Javascript",
+        "date": "24-09-2025",
+        "image": "assets/certificates/javascript.png",
+      },
+
+      {
+        "title": "PHP and MySQL",
+        "date": "30-12-2025",
+        "image": "assets/certificates/phpmysql.png",
+      },
+
+      {
+        "title": "Docker",
+        "date": "08-04-2026",
+        "image": "assets/certificates/docker.png",
+      },
+
+      {
+        "title": "Git",
+        "date": "08-04-2026",
+        "image": "assets/certificates/git.png",
+      },
+
+      {
+        "title": "PostgreSQL",
+        "date": "08-04-2026",
+        "image": "assets/certificates/postgresql.png",
       },
     ];
 
@@ -128,7 +152,7 @@ class CertificationSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
 
               children: [
-                /// TITLE + EYE ICON
+                /// TITLE
                 Row(
                   children: [
                     Expanded(
