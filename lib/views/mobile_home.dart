@@ -33,34 +33,38 @@ class _MobileHomeState extends State<MobileHome> {
         backgroundColor: const Color.fromARGB(255, 208, 208, 208),
       ),
 
-      body: pages[currentIndex],
+      /// SAFE AREA BODY
+      body: SafeArea(child: pages[currentIndex]),
 
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Color.fromARGB(255, 208, 208, 208),
+      /// SAFE AREA BOTTOM NAV
+      bottomNavigationBar: SafeArea(
+        child: CurvedNavigationBar(
+          backgroundColor: const Color.fromARGB(255, 208, 208, 208),
 
-        color: Colors.black,
+          color: Colors.black,
 
-        buttonBackgroundColor: Colors.black,
+          buttonBackgroundColor: Colors.black,
 
-        animationDuration: const Duration(milliseconds: 300),
+          animationDuration: const Duration(milliseconds: 300),
 
-        height: 60,
+          height: 60,
 
-        index: currentIndex,
+          index: currentIndex,
 
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
 
-        //Bottomnav items
-        items: const [
-          Icon(Icons.person, color: Colors.white),
-          Icon(Icons.apps, color: Colors.white),
-          Icon(Icons.developer_mode, color: Colors.white),
-          Icon(Icons.workspace_premium, color: Colors.white),
-        ],
+          /// BOTTOM NAV ITEMS
+          items: const [
+            Icon(Icons.person, color: Colors.white),
+            Icon(Icons.apps, color: Colors.white),
+            Icon(Icons.developer_mode, color: Colors.white),
+            Icon(Icons.workspace_premium, color: Colors.white),
+          ],
+        ),
       ),
     );
   }

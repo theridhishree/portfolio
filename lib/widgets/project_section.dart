@@ -77,7 +77,7 @@ class ProjectSection extends StatelessWidget {
                 githubUrl: "https://github.com/theridhishree/ecommerce",
 
                 apkUrl:
-                    "https://github.com/theridhishree/ecommerce/releases/download/v1/app-release.apk",
+                    "https://github.com/theridhishree/EcommerceApp/releases/download/v1.0.0/app-release.apk",
               ),
             ],
           ),
